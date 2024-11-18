@@ -1,0 +1,21 @@
+name: Update m3u File
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'  # Runs daily at midnight
+
+jobs:
+  update-m3u:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version:   
+ '3.x'
+      - name: Install Dependencies
+        run:   
+ pip install requests beautifulsoup4
+      - name: Update m3u
+        run: python update_m3u.py
