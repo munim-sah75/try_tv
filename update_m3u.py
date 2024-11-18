@@ -37,7 +37,7 @@ import time
 def job():
     update_m3u()
 
-schedule.every().day.at("18:55").do(job)  # Run at midnight every day
+schedule.every().day.at("19:04").do(job)  # Run at midnight every day
 
 while True:
     schedule.run_pending()
